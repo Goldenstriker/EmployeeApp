@@ -9,7 +9,7 @@ export class EmployeeComponent implements OnInit {
 
   employee:Employee[]=[{id:101,name:'Ninad'},{id:102,name:'Prajakta'},{id:103,name:'SK'}];
   delete(emp:Employee):void{
-  this.employee=this.employee.splice(this.employee.findIndex(e=>e.id==emp.id),1);
+  this.employee.splice(this.employee.indexOf(emp),1);
   }
   constructor() { }
   ngOnInit() {
