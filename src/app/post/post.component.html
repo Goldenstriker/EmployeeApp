@@ -1,4 +1,4 @@
-<div id="demo" class="carousel slide" data-ride="carousel">
+<!--<div id="demo" class="carousel slide" data-ride="carousel">
 
 
   <ul class="carousel-indicators">
@@ -12,7 +12,7 @@
         <div class="card-header">{{post.title}}</div>
         <div class="card-body">{{post.body}}</div> 
         <div class="card-footer">{{post.id}}</div>
-      </div>-->
+      </div>
       {{post.id}}
     </div>
   </div>
@@ -22,6 +22,10 @@
   <a class="carousel-control-next" href="#demo" data-slide="next">
     <span class="carousel-control-next-icon"></span>
   </a>
-</div> 
+</div> -->
+<ul class="list-group">
+  <li *ngFor="let post of posts; let i=index" class="list-group-item">{{post.id}}
+  </li>
+</ul>
 
       
