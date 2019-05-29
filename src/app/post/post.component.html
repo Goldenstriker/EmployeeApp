@@ -7,7 +7,14 @@
   
  
   <div class="carousel-inner">
-    
+    <div class="carousel-item active" *ngFor="let post of posts; let i=index" [class.active]="i==0">
+      <div class="card">
+        <div class="card-header">{{post.title}}</div>
+        <div class="card-body">{{post.body}}</div> 
+        <div class="card-footer">{{post.id}}</div>
+      </div>
+      
+    </div>
   </div>
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
@@ -16,11 +23,3 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 </div> 
-<div class="carousel-item active" *ngFor="let post of posts; let i=index" [class.active]="i==0">
-      <div class="card">
-        <div class="card-header">{{post.title}}</div>
-        <div class="card-body">{{post.body}}</div> 
-        <div class="card-footer">{{post.id}}</div>
-      </div>
-      
-    </div>
