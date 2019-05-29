@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PostService} from '../post.service';
 import {Post} from  '../post'; 
+
 import {Observable,of} from 'rxjs';
 @Component({
   selector: 'app-post',
