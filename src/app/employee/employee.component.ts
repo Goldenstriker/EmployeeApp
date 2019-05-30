@@ -12,7 +12,10 @@ export class EmployeeComponent implements OnInit {
   employees: Employee[];
   delete(emp: Employee): void {
     //this.employees.splice(this.employees.indexOf(emp), 1);
-    this.employeeService.delete_employee(emp.id).subscribe();
+    this.employeeService.delete_employee(emp.id).subscribe((res)=>{  
+        let index = this.employees.indexOf(emp);  
+        this.employees.splice(index, 1);  
+      });  
   }
   constructor(public employeeService: EmployeeService) { }
   ngOnInit() {
