@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Employee} from  './employee'; 
 @Injectable()
 export class EmployeeService {
-  baseUrl:string="http://dummy.restapiexample.com/api/v1/";
+  baseUrl:string="https://my-json-server.typicode.com/Goldenstriker/employeedb";
 
   constructor(private httpClient:HttpClient) { }
 
@@ -12,5 +12,8 @@ export class EmployeeService {
   }
   get_employee(id:number){
     return this.httpClient.get<Employee>(this.baseUrl+'/employee/'+id);
+  }
+  delete_employee(id:number){
+    return this.httpClient.delete(this.baseUrl+'/employee/'+id);
   }
 }

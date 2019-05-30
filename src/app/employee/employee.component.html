@@ -9,7 +9,7 @@
 <tbody>
   <tr *ngFor="let emp of employees">
 <td [class.danger]="emp.id==103">{{emp.id}}</td>
-<td>{{emp.employee_name}}</td>
+<td>{{emp.first_name}}</td>
 <td><input type="button" (click)="delete(emp)" value="Delete"/></td>
 </tr>
 </tbody>
