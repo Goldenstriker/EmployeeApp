@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Employee} from '../employee';
+import { Employee } from '../employee';
+import { EmployeeService } from '../employee.service';
+import { Observable, of } from 'rxjs';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -7,12 +9,16 @@ import {Employee} from '../employee';
 })
 export class EmployeeComponent implements OnInit {
 
-  employee:Employee[]=[{id:101,name:'Ninad'},{id:102,name:'Prajakta'},{id:103,name:'SK'},{id:104,name:'TV'}];
-  delete(emp:Employee):void{
-  this.employee.splice(this.employee.indexOf(emp),1);
+  employees: Employee[];
+  delete(emp: Employee): void {
+    this.employees.splice(this.employees.indexOf(emp), 1);
   }
-  constructor() { }
+  constructor(public employeeService: EmployeeService) { }
   ngOnInit() {
+    this.getEmployees();
+  }
+  getEmployees() {
+    this.employeeService.get_employees().subscribe((res) => this.employees = res);
   }
 
 }
