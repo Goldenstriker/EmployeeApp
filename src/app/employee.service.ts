@@ -11,9 +11,9 @@ export class EmployeeService {
     return this.httpClient.get<Employee[]>(this.baseUrl+'/employees');
   }
   get_employee(id:number){
-    return this.httpClient.get<Employee>(this.baseUrl+'/employee/'+id);
+    return this.httpClient.get<Employee>(this.baseUrl+'/employees/'+id);
   }
   delete_employee(id:number){
-    return this.httpClient.delete(this.baseUrl+'/employee/'+id);
+    return this.httpClient.delete(this.baseUrl+'/employees/'+id);
   }
 }
